@@ -25,17 +25,17 @@ jQuery | Google Books API | Bootstrap | CSS
 
 - Drag and drop the green guy to assign a seat!
 - Adjust seats, rows and gap-row UI sliders to redraw seatmap
-- Using angularDragdrop along with jQuery range slider
+- Using jQuery drag drop and range sliders
 - Repsonsive seat map and touch events
 
 <br/>
 
 #
-Built setup: Babel, sourcemaps, dev server, testing courtesy of 
+Build setup: Babel, sourcemaps, dev server, testing courtesy of 
 <a href='https://github.com/preboot/angular-webpack/blob/master/README.md'>angular-webpack</a> 
 
 
-Instructions from angular-webpack:
+Instructions:
 
 After you have installed all dependencies you can now run the app with:
 ```bash
