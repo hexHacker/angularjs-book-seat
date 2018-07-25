@@ -1,6 +1,7 @@
 # AngularJS with ES6 fun!
 
 <br/>
+
 | AngularJS | ES6 | ng-animate | angular-ui-router | ng-sanitize
 | ----- |----- |----- |----- |----- |
 
