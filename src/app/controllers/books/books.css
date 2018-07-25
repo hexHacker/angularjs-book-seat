@@ -1,0 +1,517 @@
+
+.header-image {
+    background-image: url(/assets/image/filmstrip.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180px;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.filter {
+    font-size: smaller;
+    padding: 10px;
+    margin: 10px auto 20px;
+    text-align: center;
+    color: #555;
+    background-color: #f4f4f4;
+    width: 270px;
+    border-radius: 10px;
+}
+
+    .filter input {
+        padding: 0;
+    }
+
+.search {
+    text-align: center;
+    padding-top:20px;
+}
+
+    .search input#search {
+        padding: 5px 10px;
+        color: #7d7d7d;
+        width: 250px;
+    }
+
+    .search .search-container {
+        display: inline-block;
+        position: relative;
+    }
+
+        .search .search-container .img-loading {
+            position: absolute;
+            padding-top: 1px;
+            height: 5px;
+            width: 70px;
+            bottom: -7px;
+            left: 0px;
+        }
+
+.message {
+    color: green;
+    padding-top: 10px;
+    min-height: 30px;
+}
+
+.results {
+    /*display: none;*/
+    margin-top: 30px;
+    clear: both;
+}
+
+
+/*  Page styles and transitions */
+
+.page {
+    position: absolute;
+    top: 51px;
+    bottom: 0;
+    width: 100%;
+}
+
+.page-home {
+    background-repeat: no-repeat;
+    background-image: url('/assets/image/cube.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #171717;
+}
+
+.page-effects {
+    background-image: url('/assets/image/rockrun.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-books {
+    background: #fff;
+}
+
+.slideOutLeft, .page.ng-leave {
+    z-index: 9999;
+    -webkit-animation: slideOutLeft 0.7s both ease;
+    -moz-animation: slideOutLeft 0.7s both ease;
+    animation: slideOutLeft 0.7s both ease;
+}
+
+.page.ng-enter {
+    z-index: 8888;
+}
+
+
+.favorites {
+    -moz-transition: max-height 0.5s, max-width 1s ease-in;
+    -o-transition: max-height 0.5s, max-width 1s ease-in;
+    -webkit-transition: max-height 0.5s, max-width 1s ease-in;
+    transition: max-height 0.5s, width 2s, max-width 2s ease-in;
+    background-color: rgba(48, 63, 75,0.90);
+    font-size: 12px;
+    color: white;
+    padding: 10px;
+    /*position: absolute;
+				top: -1px;*/
+    position: fixed;
+    right: 0;
+    overflow: hidden;
+    min-width: 110px;
+    min-height: 37px;
+    max-width: 0;
+    width: 0;
+    max-height: 0;
+    border-radius: 0 0 0 20px;
+    border-left: 2px solid #616161;
+    z-index: 99;
+}
+
+    .favorites p.fav-item {
+        text-indent: -9.5px;
+        margin-left: 18px;
+    }
+
+    .favorites p.fav-count {
+        border-bottom: 1px solid #666262;
+        padding-bottom: 2px;
+        margin-top: -4px;
+        cursor: pointer;
+    }
+
+    .favorites a {
+        color: #fff;
+    }
+
+    .favorites.open {
+        -moz-transition: max-width 1s, max-height 1.5s ease-in;
+        -o-transition: max-width 1s, max-height 1.5s ease-in;
+        -webkit-transition: max-width 1s, max-height 1.5s ease-in;
+        transition: max-width 1s, max-height 1.5s ease-in;
+        max-width: 350px;
+        width: 350px;
+        max-height: 500px;
+        cursor: default;
+    }
+
+
+    .favorites .open-icon {
+        display: block;
+    }
+
+    .favorites.open .open-icon {
+        display: none;
+    }
+
+    .favorites .remove-icon {
+        padding-right: 3px;
+        top: 2px;
+    }
+
+    .favorites .fav-close {
+        color: #f1c56b;
+    }
+
+    .favorites.open .fav-close {
+        display: block;
+    }
+
+
+.panel-group {
+    margin: 0;
+}
+
+.panel-primary {
+    margin: 5px;
+    min-height: 450px;
+}
+
+p.panel-text {
+    /*text-transform: capitalize;*/
+}
+
+.heart-icon {
+    float: right;
+    margin-top: -20px;
+    margin-right: -8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+    .heart-icon.isFavorite:hover {
+        color: #f1c56b;
+    }
+
+
+    .heart-icon.isFavorite {
+        color: #f1c56b;
+    }
+
+.remove-icon {
+    cursor: pointer;
+    color: #f1c56b;
+}
+
+a.external-link {
+    margin-top: 5px;
+}
+
+    a.external-link:after {
+        content: url('../../../public/img/external-link.png');
+        margin-left: 5px;
+    }
+
+
+.disabled {
+    pointer-events: none;
+}
+
+/*-------------------------------------------------------------------*/
+/* Animations */
+
+
+/* slide in from left */
+@keyframes slideOutLeft {
+    to {
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@-moz-keyframes slideOutLeft {
+    to {
+        -moz-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes slideOutLeft {
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-moz-keyframes slideInRight {
+    from {
+        -moz-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+
+    to {
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideInRight {
+    from {
+        -webkit-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
+
+.fade {
+    transition: all .2s ease-in-out;
+    opacity: 0;
+}
+
+    .fade.in {
+        opacity: 1;
+    }
+
+/*.fade.out {
+    }*/
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+    .grow:hover {
+        transform: scale(1.3);
+    }
+
+    .grow.flip-horizontal:hover {
+        transform: scale(-1.3, 1.3);
+    }
+
+
+.blur {
+    transition: 0.3s all ease-in;
+    filter: blur(4px);
+}
+
+    .blur.off {
+        filter: blur(0);
+    }
+
+
+
+.flip-horizontal {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    -o-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
+/* enter animation */
+#form-views.ng-enter {
+    -webkit-animation: slideInRight 0.5s both ease;
+    -moz-animation: slideInRight 0.5s both ease;
+    animation: slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+#form-views.ng-leave {
+    -webkit-animation: slideOutLeft 0.5s both ease;
+    -moz-animation: slideOutLeft 0.5s both ease;
+    animation: slideOutLeft 0.5s both ease;
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@-moz-keyframes slideOutLeft {
+    to {
+        -moz-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+}
+
+@-webkit-keyframes slideOutLeft {
+    to {
+        -webkit-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-moz-keyframes slideInRight {
+    from {
+        -moz-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+
+    to {
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideInRight {
+    from {
+        -webkit-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+/*-------------------------------------------------------------------*/
+/* Angular animation hooks */
+
+.fadefx {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+    .fadefx.ng-enter {
+        opacity: 0;
+    }
+
+        .fadefx.ng-enter.ng-enter-active {
+            opacity: 1;
+        }
+
+    .fadefx .ng-leave {
+        opacity: 1;
+    }
+
+        .fadefx.ng-leave.ng-leave-active {
+            opacity: 0;
+        }
+
+
+.fav-item {
+}
+
+    .fav-item.ng-enter {
+        -webkit-transition: 1s linear all;
+        transition: 1s linear all;
+        opacity: 0;
+    }
+
+        .fav-item.ng-enter.ng-enter-active {
+            opacity: 1;
+        }
+
+
+    .fav-item.ng-leave {
+        -moz-animation: slideOutLeft 0.6s both ease-in;
+        -o-animation: slideOutLeft 0.6s both ease-in;
+        -webkit-animation: slideOutLeft 0.6s both ease-in;
+        animation: slideOutLeft 0.6s both ease-in;
+    }
+
+
+.panel-primary > .panel-heading {
+    background-color: #44525d;
+}
+
+.panel {
+    border-color: #44525d;
+}
+
+.panel-body {
+    max-height: 350px;
+}
+
+    .panel-body img.center-block {
+        max-height: 317px;
+    }
+
+
+/* Media rules */
+
+@media only screen and (max-width: 992px) {
+    .panel-heading {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-device-width: 480px) and (min-width: 767px) {
+    .panel-primary {
+        width: 31%;
+        float: left;
+        margin: 5px;
+        min-height: 450px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .search {
+        padding-top: 50px;
+    }
+}

@@ -1,0 +1,179 @@
+.seatmap {
+    position: relative;
+}
+
+.seat {
+    float: left;
+    cursor: default;
+    width: 60px;
+    height: 60px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #00BCD4;
+    text-align: center;
+    font-size: 2em;
+    padding: 13px 10px 10px 10px;
+    opacity: 1;
+    background-image: url('../../../public/img/seat.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+    .seat.booked {
+        background-color: #607D8B;
+    }
+
+    .seat.gapRow {
+        margin-left: 50px;
+    }
+
+/*.seat:nth-child({{ vm.cssSeatsPerRow }}n+1) {*/
+/*.seat.newRow {
+        clear: both;
+        color:red;
+    }*/
+
+.person {
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 10;
+    float: none;
+    font-size: 28px;
+    background-image: none;
+    background-color: #70bf73
+}
+
+span.seat-number {
+    color: black;
+    font-size: 1em;
+    background-color: #d4d4d4;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.activeDrop {
+    background-color: #ff6a00;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 50% !important;
+    height: 10px;
+    margin: 10px 0 50px 0;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+#slider-range {
+    width: 50%
+}
+
+#isleRows {
+    border: 0;
+    width: 50%;
+}
+
+/* ui overrides*/
+
+/*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active:default:hover {
+        background: #4CAF50;
+        border: 1px solid #ccc;
+    }*/
+
+.ui-slider .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    background: #4CAF50;
+    border: 1px solid #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.ui-slider {
+    opacity: 0.8;
+}
+
+    .ui-slider:hover {
+        opacity: 1;
+    }
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .seat {
+        width: 50px;
+        height: 50px;
+    }
+
+        .seat.gapRow {
+            xmargin-left: 25px;
+        }
+
+    .person {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .seat {
+        width: 37px;
+        height: 37px;
+        margin: 7px;
+    }
+
+        .seat.gapRow {
+            margin-left: 30px;
+        }
+
+    .person {
+        font-size: 20px;
+        padding: 7px 0 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .seat {
+        width: 30px;
+        height: 30px;
+        margin: 7px 3px;
+    }
+
+        .seat.gapRow {
+            margin-left: 18px;
+        }
+
+    .person {
+        font-size: 17px;
+        padding: 6px 0 0 0;
+    }
+}

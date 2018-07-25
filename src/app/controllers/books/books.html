@@ -1,0 +1,61 @@
+
+<!-- Favorites  -->
+<div class="favorites" ng-class="{open:vm.favorites.openPanel}">
+    <p class="fav-count" ng-click="vm.favorites.items.length != 0 ? vm.favorites.openPanel = !vm.favorites.openPanel : '' ">
+        <span class="glyphicon glyphicon-shopping-cart"></span><span>&nbsp;&nbsp;{{vm.favorites.items.length}} items</span>
+        <!--<span title="open" class="grow open-icon glyphicon glyphicon-log-out" style="float: right;"></span>-->
+        <span title="{{ vm.favorites.openPanel ? 'close' : 'open' }}" class="fav-close grow remove-icon glyphicon glyphicon-log-in" ng-class="{'flip-horizontal':!vm.favorites.openPanel }" style="float: right;"></span>
+    </p>
+    <p ng-repeat="fav in vm.favorites.items track by fav.id" class="fav-item">
+        <span ng-click="vm.favorites.toggleFavorite(fav,$event);" title="remove" class="grow remove-icon glyphicon glyphicon-trash"></span>
+        {{fav.title}} ({{fav.publishedDate}})
+    </p>
+    <p>
+        <a href="#!/cart">
+            <span title="remove" class="grow remove-icon glyphicon glyphicon-check"> </span><span>Checkout</span>
+        </a>
+    </p>
+</div>
+
+<!-- book content-->
+<div class="container">
+
+    <form name="searchForm">
+        <div class="search">
+            <p class="message fade" ng-class="{ in: vm.cssShowMessage }">{{ vm.message }}</p>
+            <input id="search" type="text" ng-trim="true" ng-model="vm.search" ng-focus="vm.favorites.openPanel=false" placeholder="Enter a book title" />
+            <div class="search-container">
+                <button type="submit" class="btn btn-default" href="" ng-click="vm.updatebooks()" {{ vm.ajaxPending() ? "disabled" : "" }}>Search</button>
+                <img class="img-loading" ng-show="vm.ajaxPending()" src="./img/loading.gif" alt="loading" />
+            </div>
+        </div>
+    </form>
+
+    <div class="results fade" ng-class="{ in : vm.cssShowResults }">
+        <div class="filter">
+            <span>Filter by: </span>
+            <input type="text" ng-model="vm.filterResults" />
+        </div>
+
+        <div ng-repeat="book in vm.books | filter:vm.filterResults | filter: filterYear track by $index" class="fadefx panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <p class="panel-text">
+                        <span class="visible-lg">{{ book.title.length > 40 ? book.title.slice(0,40) + ".." : book.title }}</span>
+                        <span class="visible-sm visible-md">{{ book.title.length > 27 ? book.title.slice(0,27) + ".." : book.title }}</span>
+                        <span class="visible-xs">{{ book.title }}</span>
+                        <span>({{book.publishedDate}})</span>
+                        <span ng-click="vm.favorites.toggleFavorite(book)" ng-class="{isFavorite:vm.favorites.favoriteExists(book)}" class="grow heart-icon glyphicon glyphicon-heart"></span>
+                    </p>
+                </div>
+                <div class="panel-body">
+                    <img class="center-block" ng-src="{{ book.thumbnail }}" width="200" fallback-src="https://www.laserpartshaus.com/wp-content/uploads/2016/01/no-image.jpg" />
+                    <br />
+                    <p class="text-center"><a class="external-link" target="_blank" href="{{book.previewLink}}">Preview</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

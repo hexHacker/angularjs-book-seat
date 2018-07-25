@@ -1,0 +1,50 @@
+<style>
+    /* map angualr model to css */
+    .seat:nth-child({{ vm.cssSeatsPerRow }}n+1) {
+        clear: both;
+    }
+</style>
+
+<div class="container">
+    <br />
+    <p>
+        <label>Rows:</label>
+        <span>{{ vm.rows }}</span>
+        <input type="range" min="2" max="8" class="slider" ng-model="vm.rows" ng-change="vm.changeSeatMap()" />
+        <!--<input type="range" min="2" max="8" class="slider" ng-model="vm.rows" onmouseup="angular.element('#scope').scope().vm.changeSeatMap()" ng-keyup="vm.checkKey($event)" />-->
+    </p>
+    <p>
+        <label>Seats:</label>
+        <span>{{ vm.seatsPerRow}}</span>
+        <input type="range" min="2" max="8" class="slider" ng-model="vm.seatsPerRow" ng-change="vm.changeSeatMap()" />
+    </p>
+    <p>
+        <label for="amount">Isle rows: </label>
+        <input type="text" id="isleRows" readonly>
+    </p>
+    <div id="slider-range"></div>
+
+    <br /><hr /><br />
+    <p>Mr. Traveller</p>
+    <p ng-bind-html="vm.msg" class="message"></p>
+    <hr />
+
+    <div class="seatmap fade" ng-class="{ in : vm.cssShowSeatmap }">
+
+        <div ng-repeat="seat in vm.seats"
+             id="seat-{{ $index+1 }}"
+             class=" seat"
+             ng-class="{ booked: seat.booked, gapRow: seat.isGap, newRow: seat.newRow  }">
+        </div>
+
+        <div id="draggable">
+            <span class="seat person glyphicon glyphicon-user"></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
