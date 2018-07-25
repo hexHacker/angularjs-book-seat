@@ -1,12 +1,11 @@
 # AngularJS with ES6 fun!
 
 <br/>
-
-AngularJS | ES6 | ng-animate | angular-ui-router | ng-sanitize
---------- |
+| AngularJS | ES6 | ng-animate | angular-ui-router | ng-sanitize
+| ----- |----- |----- |----- |----- |
 
 jQuery | Google Books API | Bootstrap | CSS
------  |
+----- |----- |----- |----- |
 
 <br/>
 
