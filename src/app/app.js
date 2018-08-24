@@ -1,5 +1,3 @@
-//import 'jquery-ui-bundle'
-//import 'jquery-ui-touch-punch'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../style/app.css'
