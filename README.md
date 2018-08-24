@@ -30,6 +30,11 @@ jQuery | Google Books API | Bootstrap | CSS
 
 <br/>
 
+Live demo here!
+http://joven.azurewebsites.net
+
+<br/>
+
 #
 Build setup: Babel, sourcemaps, dev server, testing courtesy of 
 <a href='https://github.com/preboot/angular-webpack/blob/master/README.md'>angular-webpack</a> 
