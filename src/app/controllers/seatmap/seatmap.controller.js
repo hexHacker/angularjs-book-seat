@@ -1,6 +1,7 @@
 import 'jquery-ui-bundle/jquery-ui.css'
 import './seatmap.css'
 import 'jquery-ui-bundle'
+import 'jquery-ui-touch-punch'
 
 export default class SeatMapController {
 
@@ -47,7 +48,7 @@ export default class SeatMapController {
                     {
                         'booked': Math.random() >= 0.5,  // randomly assign booked seats!
                         'isGap': this.gapRows.find(e => (e === j)),
-                        'newRow': j == this.seatsPerRow - 1
+                        'newRow': j === this.seatsPerRow - 1
                     }
                 )
             }

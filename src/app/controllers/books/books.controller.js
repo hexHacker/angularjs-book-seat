@@ -40,7 +40,7 @@ export default class BooksController {
     updatebooks() {
         if (this.ajaxPending()) return;
 
-        if (this.search == '') {
+        if (this.search === '') {
             this.showMessage('Nothing? Really?!')
             return;
         }
@@ -88,7 +88,7 @@ export default class BooksController {
                         if (!pDate)
                             objBook.publishedDate = 'n/a';
                         else
-                            if (pDate.indexOf('-') != -1)
+                            if (pDate.indexOf('-') !== -1)
                                 objBook.publishedDate = pDate.substring(0, pDate.indexOf('-'));
                             else
                                 objBook.publishedDate = pDate;
