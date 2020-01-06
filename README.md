@@ -33,6 +33,8 @@ jQuery | Google Books API | Bootstrap | CSS
 Live demo here!
 http://joven.azurewebsites.net
 
+(also see http://joven.azurewebsites.net/music for a react music demo!)
+
 <br/>
 
 #
